@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name ="viewport" content ="width=device-width,initial-scale=1.0">
+        <title>
+            Second Hands.com
+        </title>
+         {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static '/css/Designfin.css'%}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css"> 
+        <link rel="stylesheet" href="{% static '/css/fontawesome-all.min.css'%}"> 
+        
+        <style>
+          body
+    {
+        background-color:lightgray;
+    }
+.footer
+{
+  margin-top:-71px;
+  margin-left:-1403px;
+  margin-right: -134px;
+  background:black;
+  color:white;
+}
+
+.footer h1
+{
+  font-size:15px;
+  margin:25px 0; 
+}
+.footer p
+{
+  font-size:12spx;
+
+}
+.copyright
+{ 
+  text-align: center;
+  margin-bottom:-80px;
+  margin-left: -2394px;
+  font-size:15px;
+  padding-bottom:20px;
+  padding-top: 20px;
+}
+.fa-heart-o
+{
+  color: red;
+  font-size:15px;
+}
+.footer hr
+{
+  margin-top:10px;
+  background-color: #b5b5b5;
+  border:none;
+  height:1px;
+}
+.footer-image img
+{
+  width:150px;
+
+}
+.footer.row.fa
+{
+  padding-right: 20px;
+  font-size:15px;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.col-md-3{
+  margin-top: 5px;
+}
+.col-md-3 img{
+  width:140px;
+}
+.a{
+  color:black;
+  text-decoration: none;
+}
+        </style>
+      </head>
+    <body>
+      
+      <div class="logo">
+        <div class="page-title">Second Hands</div>
+    </div>
+        <input type="checkbox" id="check">
+       
+        <div class ="box">
+            <input type="text" placeholder="Search Here...">
+            <label for="check"><i class="fas fa-search"></i></label>
+        </div>
+        <input type="checkbox" id="noti">
+        <div class="notify">
+            <label for="noti"><i class="fas fa-bell"></i></label>
+        </div>
+        <input type="checkbox" id="shop">
+        <div class ="shopp" >
+          <label for="shop" >  <a href="{% url 'cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true" ></i></a></i></label>
+        </div>
+        <input type="checkbox" id="heart">
+        <div class="hearts">
+            <label for="heart"><i class="far fa-heart"></i></label>
+          
+             <!---------featured Categories------->
+      <div class="categories">
+        <div class ="small-container">
+          <h3 class="title0">"...Home is not a place, It's a feel..."</h3>
+          <a href="#button" class="btn1"><span>Let'sGo!</span></a>
+          <h2 class="title1">Featured Categories</h2>
+        <div class ="row">
+     <div class="col-3">
+      <a href="/Sofas">
+        <img src="https://i.postimg.cc/C53JXntr/photo-1493150134366-cacb0bdc03fe.jpg
+" width="303px" height="250px" alt="single seater">
+
+           </a>
+            <h3><b>Sofas</b></h3>
+
+     </div>
+     <div class="col-3">
+       
+       <a href="/Beds">
+              <img src="https://i.postimg.cc/xdGsGLth/queensized1.jpg" width="303px" height="250px"alt="queensizedbed">
+              </a>
+               <h3><b>Beds</b></h3>
+
+     </div>
+     <div class="col-3">
+      <a href="/Tables">
+                <img src="https://i.postimg.cc/ydq644wt/stable.jpg
+" width="303px" height="250px" alt="study table">
+                </a>
+                 <h3><b>Tables</b></h3>
+
+     </div>
+   </div>
+        </div>
+   
+            <!----featured products-->
+            <div class="button-area" id="button">
+           <div class="small-container">
+
+        <h2 class="title2">Featured Products</h2>
+       
+        <div class="row">
+          <div class="col-4">
+            <a href="single-2.html">
+            <img src="https://i.postimg.cc/hP7Bn30q/dining2.jpg
+             " width="303px" height="250px" alt="Dining Table">  
+            </a>          
+            <h4>Dining table</h4>
+            <div class="rating">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <p><b><i class="fa fa-inr" aria-hidden="true"></i> 5500  </p> </br>
+            </b><div class="outs_more-buttn">
+              
+             {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+           </div>
+              
+             </div>
+            <div class="col-4">
+  
+              <a href="single-3.html">
+                  <img src="https://i.postimg.cc/zG1Vm5XK/doublebed1.jpg
+
+                    " width="303px" height="250px" alt="king sized bed">  
+                </a>             <h4> King-Sized</h4>
+             <div class="rating">
+               <i class="fa fa-star" aria-hidden="true"></i>
+               <i class="fa fa-star" aria-hidden="true"></i>
+               <i class="fa fa-star" aria-hidden="true"></i>
+               <i class="fa fa-star-half-o" aria-hidden="true"></i>
+               <i class="fa fa-star-o" aria-hidden="true"></i>
+             </div>
+               <p><b><i class="fa fa-inr" aria-hidden="true"></i> 15000
+                 </b><div class="outs_more-buttn">
+                 {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+               </div>
+               </p>
+                     
+               </div>
+               <div class="col-4">
+                <a href="single-4.html">
+                <img src="https://i.postimg.cc/ydq644wt/stable.jpg
+" width="303px" height="250px" alt="study table">
+</a>
+               <h4>Study table</h4>
+               <div class="rating">
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star-o" aria-hidden="true"></i>
+               </div>
+                 <p><b><i class="fa fa-inr" aria-hidden="true"></i> 3500
+                 </b><div class="outs_more-buttn">
+                {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+              </div>
+               </p>
+                 
+                 
+               </div>
+               <div class="col-4">
+                <a href="single-5.html" width="303px" height="250px"alt="Coffee Table">
+            <img src="https://i.postimg.cc/26HZCtTY/cofetable2.jpg
+                    " width="303px" height="250px" alt="cofe table">
+              </a>
+               <h4>Coffee table</h4>
+               <div class="rating">
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star-half-o" aria-hidden="true"></i>
+               </div>
+                 <p><b><i class="fa fa-inr" aria-hidden="true"></i> 3000
+                 </b><div class="outs_more-buttn">
+                {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+              </div>
+               </p>
+               </div>
+        </div>
+           </div>
+           </div>
+              <!------Latest Products-->
+           
+           <div class="small-container">
+
+            <h2 class="title2">Latest Products</h2>
+            <div class="row">
+              <div class="col-4">
+                <a href="single-2.html">
+                  <img src="https://i.postimg.cc/hP7Bn30q/dining2.jpg"
+                         width="303px" height="250px" alt="Dining Table">  
+                  </a>          
+                  <h4>Dining table</h4>
+              <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+              </div>
+                 <p><b><i class="fa fa-inr" aria-hidden="true"></i>4500</p>
+                 </b><div class="outs_more-buttn">
+                {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+              </div>
+              </div>
+                <div class="col-4">
+      
+                  <a href="latest-1.html">
+                      <img src="https://i.postimg.cc/sDL45Mmy/db3.jpg
+    
+                        " width="303px" height="250px" alt="king sized bed">  
+                    </a>             <h4> King-Sized</h4>
+                 <div class="rating">
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                   <i class="fa fa-star-o" aria-hidden="true"></i>
+                 </div>
+                   <p><b><i class="fa fa-inr" aria-hidden="true"></i> 9000</p>
+                 </b><div class="outs_more-buttn">
+                 {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+               </div>
+                   </div>
+                   <div class="col-4">
+                    <a href="single.html">
+                    <img src="https://i.postimg.cc/wBPXnV07/st5.jpg
+    " width="303px" height="250px" alt="study table">
+    </a>
+                   <h4>Study table</h4>
+                   <div class="rating">
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star-o" aria-hidden="true"></i>
+                   </div>
+                     <p><b><i class="fa fa-inr" aria-hidden="true"></i> 2500</p>
+                 </b><div class="outs_more-buttn">
+                 {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+               </div>
+                   </div>
+                   <div class="col-4">
+                    <a href="latest-2.html" width="303px" height="250px"alt="Coffee Table">
+
+                <img src="https://i.postimg.cc/d1D2Xdc4/cotable1.jpg
+                        " width="303px" height="250px" alt="cofe table">
+                  </a>
+                   <h4>Coffee table</h4>
+                   <div class="rating">
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star" aria-hidden="true"></i>
+                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                   </div>
+                     <p><b><i class="fa fa-inr" aria-hidden="true"></i> 1500</p>
+                 </b><div class="outs_more-buttn">
+                  {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+               </div>
+                   </div>
+                   <div class="col-4">
+                    <a href="single-3.html" width="303px" height="250px"alt="Coffee Table">
+
+     <img src="https://i.postimg.cc/zG1Vm5XK/doublebed1.jpg
+             " width="303px" height="250px" alt="cofe table">
+       </a>
+        <h4>King size Bed</h4>
+        <div class="rating">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star-half-o" aria-hidden="true"></i>
+        </div>
+          <p><b><i class="fa fa-inr" aria-hidden="true"></i> 2500</p>
+      </b><div class="outs_more-buttn">
+        {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+     </div>
+        </div>
+        <div class="col-4">
+          <a href="latest-4.html" width="303px" height="250px"alt="Coffee Table">
+
+                  <img src="https://i.postimg.cc/26HZCtTY/cofetable2.jpg
+                    " width="303px" height="250px" alt="coffee table">
+                  </a>
+                  <h4>Coffee table</h4>
+                  <div class="rating">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                  </div>
+                  <p><b><i class="fa fa-inr" aria-hidden="true"></i> 3500</p>
+                  </b><div class="outs_more-buttn">
+                    {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+                 </div>
+                  </div>
+                  <div class="col-4">
+                    <a href="latest-5.html" width="303px" height="250px"alt="Coffee Table">
+
+                  <img src="https://i.postimg.cc/C53JXntr/photo-1493150134366-cacb0bdc03fe.jpg
+                  " width="303px" height="250px" alt="coffee table">
+                  </a>
+                  <h4>Sofa Single Seater</h4>
+                  <div class="rating">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                  </div>
+                  <p><b><i class="fa fa-inr" aria-hidden="true"></i> 1500</p>
+                  </b><div class="outs_more-buttn">
+                    {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+                 </div>
+                  </div>
+                  <div class="col-4">
+                    <a href="latest-6.html" width="303px" height="250px"alt="Coffee Table">
+
+                  <img src="https://i.postimg.cc/ydq644wt/stable.jpg
+                  " width="303px" height="250px" alt="coffee table">
+                  </a>
+                  <h4> Study Table </h4>
+                  <div class="rating">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                  </div>
+                  <p><b><i class="fa fa-inr" aria-hidden="true"></i> 2500</p>
+                  </b><div class="outs_more-buttn">
+                    {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+                 </div>
+                  </div>
+                              </div>
+               </div>
+               
+              <!------Sale Products-->
+            
+              <div class="small-container">
+
+                <h2 class="title2">Products On Sale</h2>
+                <div class="row">
+                  <div class="col-4">
+                    <a href="onsale.html" width="303px" height="250px"alt="Dining Table">
+                      <img src="https://i.postimg.cc/CxQk85q8/dinning-table3.jpg
+                            " width="303px" height="250px" alt="Dining Table">  
+                      </a>          
+                      <h4>Dining table</h4>
+                  <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </div>
+                    <p><b><i class="fa fa-inr" aria-hidden="true"></i> 4500 <strike> 5565 </strike><p style="color:green;"> 23% off  </p> </br>
+                 </b><div class="outs_more-buttn">
+                  {% if not user.is_authenticated %}
+                  <a href="{% url 'login' %}">Add to Cart</a>
+                  {% endif %}
+                  {% if user.is_authenticated %}
+                  <a href="{% url 'cart' %}">Add to Cart</a>
+                  {% endif %}
+               </div>
+                  </div>
+                    <div class="col-4">
+                      <a href="onsale-1.html" width="303px" height="250px"alt="Bed">
+     
+                          <img src="https://i.postimg.cc/T3mgmChq/db4.jpg
+        
+                             " width="303px" height="250px" alt="king sized bed">  
+                        </a>             <h4> King-Sized Bed</h4>
+                     <div class="rating">
+                       <i class="fa fa-star" aria-hidden="true"></i>
+                       <i class="fa fa-star" aria-hidden="true"></i>
+                       <i class="fa fa-star" aria-hidden="true"></i>
+                       <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                       <i class="fa fa-star-o" aria-hidden="true"></i>
+                     </div>
+                       <p><b><i class="fa fa-inr" aria-hidden="true"></i> 7650 <strike> 9000 </strike><p style="color:green;">15% off </p> </br>
+                 </b><div class="outs_more-buttn">
+                  {% if not user.is_authenticated %}
+                  <a href="{% url 'login' %}">Add to Cart</a>
+                  {% endif %}
+                  {% if user.is_authenticated %}
+                  <a href="{% url 'cart' %}">Add to Cart</a>
+                  {% endif %}
+               </div>
+                       </div>
+                       <div class="col-4"> 
+                        <a href="onsale-2.html" width="303px" height="250px"alt="study Table">
+                        <img src="https://i.postimg.cc/0ysHB8rL/st1.jpg
+        " width="303px" height="250px" alt="study table">
+        </a>
+                       <h4>Study table</h4>
+                       <div class="rating">
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star" aria-hidden="true"></i>
+                         <i class="fa fa-star-o" aria-hidden="true"></i>
+                       </div>
+                         <p><b><i class="fa fa-inr" aria-hidden="true"></i> 2230 <strike> 4108 </strike><p style="color:green;"> 10% off  </p> </br>
+                 </b>      <div class="outs_more-buttn">
+                  {% if not user.is_authenticated %}
+                  <a href="{% url 'login' %}">Add to Cart</a>
+                  {% endif %}
+                  {% if user.is_authenticated %}
+                  <a href="{% url 'cart' %}">Add to Cart</a>
+                  {% endif %}
+               </div>                 </div>
+               <div class="col-4"> 
+                <a href="onsale-3.html" width="303px" height="250px"alt="study Table">
+                <img src="https://i.postimg.cc/8CWbfFJr/ct5.jpg
+" width="303px" height="250px" alt="study table">
+</a>
+               <h4>Coffee table</h4>
+               <div class="rating">
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star" aria-hidden="true"></i>
+                 <i class="fa fa-star-o" aria-hidden="true"></i>
+               </div>
+                 <p><b><i class="fa fa-inr" aria-hidden="true"></i> 3050 <strike> 4000 </strike><p style="color:green;"> 10% off  </p> </br>
+         </b>      <div class="outs_more-buttn">
+          {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">Add to Cart</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'cart' %}">Add to Cart</a>
+        {% endif %}
+       </div>                 </div>
+                </div>
+                   </div>
+        
+               
+      </div>
+           <!--testimonials-->
+           <div class="testemonial">
+            <div class ="small-container">
+                <div class="row">
+                      <div class="col-3">
+                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            <p>This has been a wonderful platform to purchase
+                                furnitures at reasonble rates.It can be
+                              improved for easy to use interface.Overall its a wonderful site,will
+                              surely recommend this site to my friends nd family!
+                            </p>
+                            <div class="rating">
+<i class="fa fa-star" aria-hidden="true" style="margin-left:140px;"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                            </div>
+                            <img src="https://i.postimg.cc/Xv4vH2VL/image-fem.jpg" style=" width: 40px;
+                            height: 40px;border-radius: 50%;margin-left: 169px;" >
+                            <h3>Maria Jones</h3>
+                      </div>
+                      <div class="col-3">
+                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            <p>This has been a wonderful platform to purchase
+                                furnitures at reasonble rates.It can be
+                              improved for easy to use interface
+                            </p>
+                            <div class="rating">
+                              <i class="fa fa-star" aria-hidden="true"style="margin-left:137px;"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                            </div>
+                            <img src="https://i.postimg.cc/Xv4vH2VL/image-fem.jpg" style=" width: 40px;
+                            height: 40px;border-radius: 50%;margin-left: 169px;"
+                          >
+                            <h3>Elizabeth Duch</h3>
+                      </div>
+                      <div class="col-3">
+                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                            <p>This has been a wonderful platform to purchase
+                                furnitures at reasonble rates.It can be
+                              improved for easy to use interface.Overall its a wonderful site,will
+                              surely recommend this site to my friends nd family!
+                            </p>
+                            <div class="rating">
+                              <i class="fa fa-star" aria-hidden="true"style="margin-left:137px;"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                            </div>
+                            <img src="https://i.postimg.cc/y6c8K4kj/image-ma2.png" style=" width: 40px;
+                            height: 40px;border-radius: 50%;margin-left: 169px;">
+                            <h3>Mark Jones</h3>
+                      </div>
+              </div>
+            </div>
+      </div>                              
+
+          <!--Navigation Bar -->
+         
+    <div class="fixed" >
+    <div class="navbar">
+        <a href="/index">Home</a>
+        
+        <div class="subnav">
+            <button class="subnavbtn">Categories</button>
+            <div class="subnav-content">
+                <div class="dropdown">
+                    <button class="dropbtn">Sofas 
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="singleseater.html">1 Seater</a>
+                      <a href="two seater.html">2 Seater</a>
+                      <a href="threeseater.html">3 Seater</a>
+
+                    </div>
+                </div> 
+                  <div class="dropdown">
+                    <button class="dropbtn">Beds 
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="singlebed.html">Single-Sized Bed </a>
+                      <a href="kingsizedbed.html">King-Sized Bed</a>
+                      <a href="queensizedbed.html">Queen-Sized Bed</a>
+                    </div>
+                  </div> 
+                  <div class="dropdown">
+                    <button class="dropbtn">Tables 
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="dinning table.html">Dining Tables</a>
+                      <a href="study table.html">Study Tables</a>
+                      <a href="coffee tables.html">Coffee Tables</a>
+                    </div>
+                  </div> 
+        </div>
+    </div>
+    {% if not user.is_authenticated %}
+    <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">Log-Out</a>
+  {% else %}
+  <a href="{% url 'login' %}">Log-in</a>
+  {% endif %}
+        <a href="/Aboutus">About Us</a>
+        <div class="dropdown">
+            <button class="dropbtn">Help
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/contact">Contact Us</a>
+              <a href="#">FAQ</a>
+              <a href="#">Initiate Return</a>
+            </div>
+          </div>
+          {% if  not user.is_authenticated %}
+          <a href="{% url 'login' %}">Sell</a>
+        {% else %}
+      
+        <a href="https://www.jotform.com/assign/212954989524471/222764545344055">Sell</a>
+        {% endif %}
+        
+      </div>
+    </div>
+   
+     <!--------Footer------>
+ <section class="footer" style="
+ margin-top: 1000ps;
+ width: -1354px;
+ height: 198px;
+ padding-left: 1460px;
+">
+<style>
+  .btns{
+    text-decoration: none;
+    color:white;
+  }
+ 
+</style>
+      <div class="container text-center" >
+        <div class="row">
+          <div class="col-md-3">
+            <h1>Useful Links</h1>
+            <p> <p> <a href="Privacy policy.html" class="btns">Privacy policy</a> </p>
+            <p> <a href="Terms of use.html" class="btns">Terms of use</a></p>
+              <p> <a href="Return policy.html" class="btns">Return policy</a></p>
+         
+             
+          </div>
+          <div class="col-md-3">
+            <h1>Company</h1>
+            <p> <a href="/index" class="btns">Home</a></p>
+            <p> <a href="/Aboutus" class="btns">About Us</a> </p>
+               <p> <a href="/contact" class="btns">Contact Us</a></p>
+          </div>
+          <div class="col-md-3">
+            <h1>Follow Us On</h1>
+            <p><i class="fas fa-facebook-official"></i> <a href="https://www.facebook.com/" class="btns"> Facebook</a> </p>
+            <p><i class="fas fa-youtube-play"></i><a href="https://www.youtube.com/" class="btns"> Youtube </a></p>
+            <p><i class="fas fa-linkedin"></i><a href="https://www.linkedin.com/" class="btns">Linkedin</a> </p>
+            <p><i class="fas fa-twitter"></i><a href="https://twitter.com/" class="btns"> Twitter</a> </p>
+          </div>
+          <div class="col-md-3" footer-image>
+            <h1>Download App</h1>
+            <img src="https://i.postimg.cc/brh8rrsT/img-playstore5.png">
+            <img src="https://i.postimg.cc/bwJPsKNK/img-appstore5.jpg">
+        </div>
+        
+       
+      </div>
+    
+      <p class="copyright">&copy Copyright 2021 - SecondHands</p>
+      
+     </div>
+    
+   </section>
+
+</body>
+</html>

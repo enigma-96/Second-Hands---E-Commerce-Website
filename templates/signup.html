@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  background-image: url("https://images4.alphacoders.com/260/260758.jpg");
+  min-height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  position: absolute;
+  right: 70%;
+  top:20%;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color:inherit;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0 26px 0;
+  border: none;
+  border-radius: 30px;
+  background: #f1f1f1;
+  outline:none;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.btn {
+  background-color: brown;
+  color: white;
+  padding: 16px 110px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 45px;
+  outline:none;
+
+}
+
+.btn:hover ,.cancelbtn:hover {
+  opacity:3;
+}
+
+</style>
+</head>
+<body>
+<div class="bg-img">
+  <form  method="POST" action="." class="container">
+    <h1>Register</h1>
+    {% csrf_token %}
+    {{ form }}
+   <br><br><br>
+    <input type="submit" class="btn" value="Register">
+    <br>
+    </form>
+    </div>
+
+    <script type="text/javascript">
+      document.getElementsByTagName("span")[0].innerHTML="";
+      document.getElementsByTagName("span")[1].innerHTML="";
+    </script>
+
+
+</body>
+</html>
